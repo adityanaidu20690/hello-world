@@ -1,22 +1,18 @@
-pipeline{
- agent {
-        node {
-            label 'maven'
-        }
-    }
- stages{
-   stage ('git clone'){
-   steps{
+pipeline {
+    agent any
+
+    stages {
+        stage('git clone'){
+     steps{
      git 'https://github.com/adityanaidu20690/hello-world.git'
      }
- 
- }
-stage ('Maven build') {
+   }
+   stage ('Maven build') {
   steps {
     echo "-----------------start build--------------"
     sh 'mvn clean build'
     echo "-----------------build completed----------"
     }
   }
-}
+    }
 }
