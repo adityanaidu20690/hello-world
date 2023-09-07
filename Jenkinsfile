@@ -11,6 +11,12 @@ pipeline{
      }
  
  }
-
+stage ('Maven build') {
+  steps {
+    echo "-----------------start build--------------"
+    sh 'mvn clean build'
+    echo "-----------------build completed----------"
+    }
+  }
 }
 }
