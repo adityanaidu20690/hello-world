@@ -5,12 +5,12 @@ pipeline{
         }
     }
  stages{
-   stage(git clone){
-     steps{
+   stage ('git clone'){
+   steps{
      git 'https://github.com/adityanaidu20690/hello-world.git'
      }
-
-   }
+ 
  }
 
+}
 }
